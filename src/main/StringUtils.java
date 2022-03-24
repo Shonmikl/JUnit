@@ -1,13 +1,17 @@
+package main;
+
 public class StringUtils {
 
-    public static String chopOff2StarsAtHead(String str) {
+    // "   **" -> "**", " **"->"**", "****", "**  "-> "**  "
+
+    public String chopOff2SpacesAtHead(String str) {
         if(str.length() <= 2) {
-            return str.replaceAll("*", "");
+            return str.replaceAll(" ", "");
         }
         String head = str.substring(0, 2);
         String tail = str.substring(2);
 
-        return head.replaceAll("*", "") + tail;
+        return head.replaceAll(" ", "") + tail;
     }
 
     public static boolean are2CharsAtHeadAndTailEqual(String str) {
